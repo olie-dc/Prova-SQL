@@ -8,11 +8,18 @@ Os clubes de leitura desempenham um papel crucial na promoção da leitura e na 
 
 ## 2 - Modelagem Conceitual
 
-![Home](https://github.com/olie-dc/Prova-SQL/blob/main/imagem/BookWorms(DER).png?raw=true)
+<img src="https://github.com/olie-dc/Prova-SQL/blob/main/imagem/BookWorms(DER).png?raw=true" width="600px"/>
 
 ## 3 - Modelagem Lógica
 
-![Home](https://github.com/olie-dc/Prova-SQL/blob/main/imagem/BookWorms(tabelas).png?raw=true)
+<p>Membros: (ID_user (Chave Primária, int), Nome_user (varchar), Senha (varchar), Email (varchar), Data_inscricao (date), ID_clube (chave estrangeira, int), ID_endereço (chave estrangeira, varchar))</p> 
+<p>Endereco: (ID_endereco (Chave Primária, int), Cidade (varchar), UF (varchar), CEP (int), Rua (varchar), Numero (int), Bairro (varchar))</p>
+<p>Clubes_de_Leitura: (ID_clube (Chave Primária, int), Nome_clube (varchar), Descricao (text), Id_user (Chave estrangeira, int), ISBN (Chave estrangeira, int))</p>
+<p>Livros: (ISBN (Chave Primária, int), Titulo (varchar), Genero (varchar), Editora (varchar), Sinopse (varchar), Autor (varchar))</p> 
+<p>Discussoes: (ID_discussoes (Chave Primária, int), Conteudo (varchar), Data_Hora (datetime), ID_user (chave estrangeira, int), ISBN (chave estrangeira, int), ID_clube (chave estrangeira, int))</p>   
+<p>Comentarios: (ID_comentarios (Chave Primária, int), Texto (varchar), Data_Hora (datetime), ID_user (chave estrangeira, int), ID_discussoes (chave estrangeira, int), ID_clube (chave estrangeira, int), ISBN (Chave estrangeira, int))</p> 
+
+<img src="https://github.com/olie-dc/Prova-SQL/blob/main/imagem/BookWorms(tabelas).png?raw=true" width="600px"/>
 
 ## 4 - Modelagem Física
 
