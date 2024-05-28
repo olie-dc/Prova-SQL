@@ -58,5 +58,62 @@ DELETE FROM Membros WHERE ID_user = 21;
 
 ## 7 - Relatórios
 
+###  Seleção, Filtro e Ordenação:
 
+```sql
+SELECT * FROM Membros;
+```
+<img src="https://github.com/olie-dc/Prova-SQL/blob/main/img/select-1.PNG?raw=true" width="200px"/>
+
+```sql
+SELECT * FROM Livros WHERE Genero = 'Fantasia';
+```
+<img src="https://github.com/olie-dc/Prova-SQL/blob/main/img/select-2.PNG?raw=true" width="200px"/>
+
+```sql
+SELECT ISBN From Livros WHERE Genero = 'Poesia';
+```
+<img src="https://github.com/olie-dc/Prova-SQL/blob/main/img/select-3.PNG?raw=true" width="200px"/>
+
+```sql
+SELECT Comentarios.Texto, Membros.Nome_user FROM Comentarios
+JOIN Membros ON Comentarios.ID_user = Membros.ID_user WHERE Comentarios.ID_discussoes = 1;
+```
+<img src="https://github.com/olie-dc/Prova-SQL/blob/main/img/select-4.PNG?raw=true" width="200px"/>
+
+```sql
+SELECT Clubes_de_Leitura.Nome_clube, Membros.Nome_user FROM Clubes_de_Leitura
+JOIN Membros ON Clubes_de_Leitura.ID_user = Membros.ID_user WHERE Membros.Nome_user = 'Alice';
+```
+<img src="https://github.com/olie-dc/Prova-SQL/blob/main/img/select-5.PNG?raw=true" width="200px"/>
+
+```sql
+SELECT Livros.Titulo, Discussoes.Conteudo FROM Livros
+JOIN Discussoes ON Livros.ISBN = Discussoes.ISBN;
+```
+<img src="https://github.com/olie-dc/Prova-SQL/blob/main/img/select-6.PNG?raw=true" width="200px"/>
+
+```sql
+SELECT Membros.Nome_user, Endereco.Cidade, Endereco.Rua FROM Membros
+JOIN Endereco ON Membros.ID_endereco = Endereco.ID_endereco WHERE Membros.Nome_user = 'Bob';
+```
+<img src="https://github.com/olie-dc/Prova-SQL/blob/main/img/select-7.PNG?raw=true" width="200px"/>
+
+```sql
+SELECT Discussoes.Conteudo, Clubes_de_Leitura.Nome_clube FROM Discussoes
+JOIN Clubes_de_Leitura ON Discussoes.ID_clube = Clubes_de_Leitura.ID_clube;
+```
+<img src="https://github.com/olie-dc/Prova-SQL/blob/main/img/select-8.PNG?raw=true" width="200px"/>
+
+```sql
+SELECT Clubes_de_Leitura.Nome_clube, COUNT(Membros.ID_user) AS Numero_de_Membros FROM Membros
+JOIN Clubes_de_Leitura ON Membros.ID_clube = Clubes_de_Leitura.ID_clube GROUP BY Clubes_de_Leitura.Nome_clube;
+```
+<img src="https://github.com/olie-dc/Prova-SQL/blob/main/img/select-9.PNG?raw=true" width="200px"/>
+
+```sql
+SELECT Comentarios.Texto, Comentarios.Data_Hora, Membros.Nome_user FROM Comentarios
+JOIN Membros ON Comentarios.ID_user = Membros.ID_user ORDER BY Comentarios.Data_Hora DESC;
+```
+<img src="https://github.com/olie-dc/Prova-SQL/blob/main/img/select-10.PNG?raw=true" width="200px"/>
 
