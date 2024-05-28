@@ -23,17 +23,40 @@ Os clubes de leitura desempenham um papel crucial na promoção da leitura e na 
 
 ## 4 - Modelagem Física
 
-[Insira aqui a modelagem física do projeto]
+
 
 ## 5 - Inserção de Dados
 
-[Insira aqui o script de inserção de dados no banco de dados]
+
 
 ## 6 - CRUD
 
-[Insira aqui o script CRUD para operações no banco de dados]
+### Create:
+```sql
+INSERT INTO Membros (ID_user, Nome_user, Senha, Email, Data_inscricao, ID_clube, ID_endereco) 
+VALUES (21, 'Victor', 'senha123', 'victor@example.com', '2023-05-01', 1, 1);
+```
+<img src="https://github.com/olie-dc/Prova-SQL/blob/main/img/Create.PNG?raw=true" width="200px"/>
+
+### Read:
+```sql
+SELECT * FROM Membros;
+````
+<img src="https://github.com/olie-dc/Prova-SQL/blob/main/img/Read.PNG?raw=true" width="200px"/>
+
+### Update:
+```sql
+UPDATE Membros SET Email = 'victor_updated@example.com' WHERE ID_user = 21;
+```
+<img src="https://github.com/olie-dc/Prova-SQL/blob/main/img/Uodate.PNG?raw=true" width="200px"/>
+
+### Delete:
+```sql
+DELETE FROM Membros WHERE ID_user = 21;
+```
+<img src="https://github.com/olie-dc/Prova-SQL/assets/160071572/2c520895-42bc-4ea1-854f-078509c6b472" width="200px"/>
 
 ## 7 - Relatórios
 
-[Insira aqui consultas SQL para gerar relatórios a partir do banco de dados]
+
 
